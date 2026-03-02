@@ -14,7 +14,7 @@ RUN npm ci --only=production
 COPY backend/ ./
 
 # Stage 3: final image
-FROM alpine:3.21 AS stage-2
+FROM node:18-alpine AS stage-2
 WORKDIR /app
 
 # 安裝必要套件
@@ -24,7 +24,7 @@ RUN apk add --no-cache dumb-init nginx gettext curl
 COPY --from=frontend-builder /app/build /app/frontend/build
 COPY --from=backend-prep /app /app
 
-# 在 build 階段就放好 nginx config
+# 複製 nginx config（已正確格式）
 COPY nginx-render.conf.template /etc/nginx/conf.d/default.conf
 
 # 複製啟動腳本
