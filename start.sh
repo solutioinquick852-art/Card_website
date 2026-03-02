@@ -4,17 +4,34 @@ set -e
 echo "=== Starting Card Inventory Application ==="
 echo ""
 
+# 檢查工作目錄
+echo "Working directory: $(pwd)"
+echo ""
+
 # 檢查文件是否存在
 echo "Checking files..."
+ls -la /app/
+
+echo ""
+echo "Checking frontend build directory..."
+ls -la /app/frontend/ 2>/dev/null || echo "Frontend directory not found"
+
+echo ""
+echo "Checking for index.html..."
+find /app -name "index.html" -type f
+
+echo ""
+echo "Checking backend files..."
+ls -la /app/*.js 2>/dev/null || echo "Backend files not found in /app"
+
+echo ""
 if [ ! -f "/app/index.js" ]; then
-    echo "ERROR: Backend index.js not found!"
-    ls -la /app/
+    echo "ERROR: Backend index.js not found in /app!"
     exit 1
 fi
 
 if [ ! -d "/app/frontend/build" ]; then
-    echo "ERROR: Frontend build directory not found!"
-    ls -la /app/frontend/
+    echo "ERROR: Frontend build directory not found at /app/frontend/build!"
     exit 1
 fi
 
@@ -42,8 +59,8 @@ else
     echo "✗ Backend failed to start"
     exit 1
 fi
-echo ""
 
+echo ""
 # 啟動 nginx（監聽 80 端口）
 echo "Starting nginx on port 80..."
 nginx -g "daemon off;" -t
@@ -66,8 +83,8 @@ else
     echo "✗ Nginx failed to start"
     exit 1
 fi
-echo ""
 
+echo ""
 echo "=== Services Ready ==="
 echo "Frontend: http://0.0.0.0:80"
 echo "Backend: http://0.0.0.0:3000"
@@ -78,7 +95,7 @@ wait -n $BACKEND_PID $NGINX_PID || true
 
 # 如果其中一個進程退出，終止所有進程
 echo ""
-echo "=== One of the processes exited ==="
+echo "=== One of processes exited ==="
 echo "Terminating all processes..."
 kill $BACKEND_PID $NGINX_PID 2>/dev/null || true
 echo "Done."
