@@ -10,6 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Health check endpoint for Render
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
 // 靜態金輪驗證
 const verifyStaticKey = (req, res, next) => {
   const { static_key } = req.body;
@@ -276,7 +281,52 @@ app.delete('/api/admin/cards/:id', async (req, res) => {
   }
 });
 
+// 初始化數據庫表（如果不存在）
+async function initDatabase() {
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS cards (
+        id SERIAL PRIMARY KEY,
+        card_id VARCHAR(30) UNIQUE NOT NULL,
+        card_name VARCHAR(2000) NOT NULL,
+        card_level VARCHAR(50),
+        card_score NUMERIC(4,1) NOT NULL,
+        card_quantity INTEGER DEFAULT 1,
+        image_url1 TEXT,
+        image_url2 TEXT,
+        image_url3 TEXT,
+        card_type VARCHAR(50),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS admins (
+        id SERIAL PRIMARY KEY,
+        username VARCHAR(100) UNIQUE NOT NULL,
+        password_hash TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE INDEX IF NOT EXISTS idx_cards_card_id ON cards(card_id);
+      CREATE INDEX IF NOT EXISTS idx_cards_type ON cards(card_type);
+      CREATE INDEX IF NOT EXISTS idx_cards_score ON cards(card_score);
+
+      -- 插入預設管理員（如果不存在）
+      INSERT INTO admins (username, password_hash)
+      SELECT 'admin', '$2a$10$xw.zVJTGyUA.FKWmG9SNx.oWX9DCOonFoy4oRDvhNRkm60TANon7e'
+      WHERE NOT EXISTS (SELECT 1 FROM admins WHERE username = 'admin');
+    `);
+    console.log('數據庫表初始化完成');
+  } catch (error) {
+    console.error('數據庫初始化錯誤:', error);
+  }
+}
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`服務器運行在 http://localhost:${PORT}`);
+
+initDatabase().then(() => {
+  app.listen(PORT, () => {
+    console.log(`服務器運行在 http://localhost:${PORT}`);
+  });
 });
