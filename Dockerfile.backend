@@ -15,8 +15,8 @@ ENV NODE_ENV=production
 # 複製後端 package.json 和 package-lock.json
 COPY backend/package*.json ./
 
-# 安裝生產依賴（只安裝生產環境的依賴）
-RUN npm ci --only=production
+# 安裝生產依賴（使用 npm install 兼容性更好）
+RUN npm install --only=production
 
 # 複製後端源代碼
 COPY backend/ ./

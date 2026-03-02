@@ -9,8 +9,8 @@ WORKDIR /app
 # 複製前端 package.json 和 package-lock.json
 COPY frontend/package*.json ./
 
-# 安裝所有依賴（包括 devDependencies）
-RUN npm ci
+# 安裝所有依賴（使用 npm install 兼容性更好）
+RUN npm install
 
 # 複製前端源代碼
 COPY frontend/ ./

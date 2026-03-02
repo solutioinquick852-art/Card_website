@@ -9,8 +9,8 @@ WORKDIR /app
 # 複製前端 package.json
 COPY frontend/package*.json ./
 
-# 安裝前端依賴
-RUN npm ci
+# 安裝前端依賴（使用 npm install 兼容性更好）
+RUN npm install
 
 # 複製前端源代碼
 COPY frontend/ ./
@@ -27,7 +27,7 @@ WORKDIR /app
 COPY backend/package*.json ./
 
 # 安裝後端依賴（只安裝生產依賴）
-RUN npm ci --only=production
+RUN npm install --only=production
 
 # 複製後端源代碼
 COPY backend/ ./
@@ -69,7 +69,7 @@ NGINX_PID=$!\n\
 wait -n $BACKEND_PID $NGINX_PID\n\
 \n\
 # 如果其中一個進程退出，終止所有進程\n\
-echo "One of the processes exited. Terminating..."\n\
+echo "One of processes exited. Terminating..."\n\
 kill $BACKEND_PID $NGINX_PID 2>/dev/null\n\
 ' > /app/start.sh && chmod +x /app/start.sh
 
