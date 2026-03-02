@@ -53,8 +53,11 @@ COPY --from=backend-prep /app /app
 # 複製 nginx 配置
 COPY nginx-render.conf /etc/nginx/conf.d/default.conf
 
-# 創建啟動腳本
+# 創建啟動腳本（保持 root 用戶）
 RUN echo '#!/bin/sh\n\
+# 設置錯誤處理\n\
+set -e\n\
+\n\
 # 啟動後端服務在後台（監聽 3000 端口）\n\
 echo "Starting backend server on port 3000..."\n\
 node index.js &\n\
@@ -62,32 +65,16 @@ BACKEND_PID=$!\n\
 \n\
 # 啟動 nginx（監聽 80 端口）\n\
 echo "Starting nginx on port 80..."\n\
-nginx &\n\
+nginx -g "daemon off;" &\n\
 NGINX_PID=$!\n\
 \n\
 # 等待任一進程退出\n\
-wait -n $BACKEND_PID $NGINX_PID\n\
+wait -n $BACKEND_PID $NGINX_PID || true\n\
 \n\
 # 如果其中一個進程退出，終止所有進程\n\
 echo "One of processes exited. Terminating..."\n\
-kill $BACKEND_PID $NGINX_PID 2>/dev/null\n\
+kill $BACKEND_PID $NGINX_PID 2>/dev/null || true\n\
 ' > /app/start.sh && chmod +x /app/start.sh
-
-# 創建非 root 用戶以提高安全性
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nodejs -u 1001
-
-# 更改所有權限
-RUN chown -R nodejs:nodejs /app
-
-# 配置 nginx 權限
-RUN chown -R nodejs:nodejs /var/lib/nginx && \
-    chown -R nodejs:nodejs /var/log/nginx && \
-    mkdir -p /run/nginx && \
-    chown -R nodejs:nodejs /run/nginx
-
-# 切換到非 root 用戶
-USER nodejs
 
 # 暴露端口（Nginx 端口）
 EXPOSE 80
