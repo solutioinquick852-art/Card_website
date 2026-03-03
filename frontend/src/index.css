@@ -36,6 +36,7 @@ code {
   text-align: center;
   color: white;
   padding: 40px 20px;
+  background: linear-gradient(135deg, #ffcb05 0%, #ff9500 100%);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -51,10 +52,17 @@ code {
   opacity: 0.95;
   max-width: 800px;
   margin: 0 auto;
+  color: white;
+}
+
+.header span {
+  color: white;
+  opacity: 0.9;
 }
 
 .search-box {
   background: white;
+  color: #333;
   border-radius: 16px;
   padding: 30px;
   margin: 40px 0;
@@ -102,11 +110,21 @@ code {
 
 .card-detail {
   background: white;
+  color: #333;
   border-radius: 16px;
   padding: 30px;
   margin: 20px 0;
   box-shadow: 0 8px 32px rgba(59, 76, 202, 0.3);
   animation: slideUp 0.4s ease-out;
+}
+
+.card-detail h2,
+.card-detail h3,
+.card-detail h4,
+.card-detail p,
+.card-detail span,
+.card-detail div {
+  color: #333;
 }
 
 @keyframes slideUp {
