@@ -184,7 +184,7 @@ app.get('/api/cards/distribution', async (req, res) => {
 
   try {
     const cardResult = await pool.query(
-      'SELECT card_type FROM cards WHERE card_id = $1',
+      'SELECT card_name FROM cards WHERE card_id = $1',
       [card_id]
     );
 
@@ -197,7 +197,7 @@ app.get('/api/cards/distribution', async (req, res) => {
     const result = await pool.query(
       `SELECT ROUND(card_score::numeric, 1) as card_score, COUNT(*) as count
        FROM cards
-       WHERE card_type = $1
+       WHERE card_name = $1
        GROUP BY ROUND(card_score::numeric, 1)
        ORDER BY card_score DESC`,
       [cardType]
