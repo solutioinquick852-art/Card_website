@@ -3,7 +3,7 @@ import CardDetail from './CardDetail';
 import axios from 'axios';
 
 // 整合 Docker 使用相對路徑，獨立部署使用完整 URL
-const API_URL = process.env.REACT_APP_API_URL !== undefined ? process.env.REACT_APP_API_URL : '/api';
+const API_URL = process.env.REACT_APP_API_URL !== undefined ? process.env.REACT_APP_API_URL : '';
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');
