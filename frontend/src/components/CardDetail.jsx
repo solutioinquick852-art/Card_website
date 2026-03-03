@@ -43,12 +43,16 @@ function CardDetail({ card }) {
           {card.card_type && (
             <div className="info-item">
               <div className="info-label">類型/種類 (Variety/Pedigree)</div>
-              <div className="info-value">{card.card_type}</div>
+              <div className="info-value">{card.card_type || '-'}</div>
             </div>
           )}
           <div className="info-item">
             <div className="info-label">等級 (Grade)</div>
             <div className="info-value">{card.card_level || '-'}</div>
+          </div>
+          <div className="info-item">
+            <div className="info-label">分數 (Score)</div>
+            <div className="info-value">{card.card_score || '-'}</div>
           </div>
         </div>
 
