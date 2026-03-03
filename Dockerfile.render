@@ -20,9 +20,11 @@ WORKDIR /app
 # 安裝必要套件
 RUN apk add --no-cache dumb-init nginx gettext curl
 
-# 複製前端與後端
-COPY --from=frontend-builder /app/build /app/frontend/build
+# 先複製後端
 COPY --from=backend-prep /app /app
+
+# 再複製前端構建文件（避免被覆蓋）
+COPY --from=frontend-builder /app/build /app/frontend/build
 
 # 複製 nginx config（已正確格式）
 COPY nginx-render.conf.template /etc/nginx/conf.d/default.conf
