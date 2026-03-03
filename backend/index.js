@@ -192,7 +192,7 @@ app.get('/api/cards/distribution', async (req, res) => {
       return res.status(404).json({ error: '卡牌不存在' });
     }
 
-    const cardType = cardResult.rows[0].card_type;
+    const cardType = cardResult.rows[0].card_name;
 
     const result = await pool.query(
       `SELECT ROUND(card_score::numeric, 1) as card_score, COUNT(*) as count
