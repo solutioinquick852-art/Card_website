@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
+import Hero from './Hero';
 import Home from './components/Home';
 import Intro from './Intro';
 import Plugins from './Plugins';
@@ -41,7 +42,7 @@ function App() {
         <Navigation />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<><Home /><Hero /></>} />
             <Route path="/intro" element={<Intro />} />
             <Route path="/plugins" element={<Plugins />} />
             <Route
