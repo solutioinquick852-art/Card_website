@@ -2,7 +2,7 @@ import React from 'react';
 
 function Plugins() {
   return (
-    <div className="Search" id="search">
+    <div className="search_plugin" id="search">
       <div className="hero-content">
         <div className="hero-text">
           <h1>
