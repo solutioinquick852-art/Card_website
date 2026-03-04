@@ -42,9 +42,7 @@ function App() {
         <Navigation />
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/intro" element={<Intro />} />
-            <Route path="/plugins" element={<Plugins />} />
+            <Route path="/" element={<Navigate to="/#home" replace />} />
             <Route
               path="/card_admin"
               element={

@@ -1,14 +1,14 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 function Navigation() {
   const location = useLocation();
 
   const navItems = [
-    { name: '主頁', nameEn: 'Home', path: '/#home' },
-    { name: '功能介紹', nameEn: 'Features', path: '/#intro' },
-    { name: '搜卡', nameEn: 'Search', path: '/#search' },
+    { name: '主頁', nameEn: 'Home', path: '/#home', type: 'hash'},
+    { name: '功能介紹', nameEn: 'Features', path: '/#intro', type: 'hash'},
+    { name: '搜卡', nameEn: 'Search', path: '/#search', type: 'hash'},
   ];
 
   return (
