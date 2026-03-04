@@ -1,23 +1,10 @@
 import React from 'react';
+import Hero from './Hero';
 
 function Intro() {
   return (
     <div className="container">
-      <div className="header">
-        <h1>
-          簡介
-          <span style={{ display: 'block', fontSize: '0.5em', fontWeight: 'normal', marginTop: '10px' }}>
-            Introduction
-          </span>
-        </h1>
-        <p>
-          歡迎來到寶可夢卡牌查詢系統
-          <br />
-          <span style={{ fontSize: '0.9em', opacity: 0.8 }}>
-            Welcome to the Pokémon Card Query System
-          </span>
-        </p>
-      </div>
+      <Hero />
 
       <div className="card-detail">
         <div className="card-detail-header">
@@ -25,51 +12,56 @@ function Intro() {
         </div>
         <div className="info-item" style={{ marginBottom: '20px' }}>
           <div className="info-value">
-            <p>寶可夢卡牌查詢系統是一個專門為卡牌收藏家和玩家設計的在線查詢平台。</p>
-            <br />
-            <p>本系統提供以下功能：</p>
-            <ul style={{ textAlign: 'left', marginTop: '10px', lineHeight: '1.8' }}>
-              <li>🔍 快速卡牌搜索 - 輸入卡牌編號即可查詢</li>
-              <li>📊 詳細評級資料 - 查看卡牌的詳細信息和評級</li>
-              <li>🖼️ 卡牌圖片展示 - 高質量的卡牌圖片預覽</li>
-              <li>📈 數據統計分析 - 全面的卡牌數據分析工具</li>
+            <h3>專業評級標準</h3>
+            <p style={{ marginTop: '10px', lineHeight: '1.8', color: '#28a745' }}>
+              卡牌評級不只是收藏的保障，更是市場交易的信任基礎。
+              每一張卡牌都經過嚴格檢測，包括卡面狀態、印刷品質、邊角磨損等細節，
+              最終以標準化分數呈現。這樣的評級系統，讓收藏者能清楚了解卡牌的真實價值，
+              並在市場上獲得更高的認可。
+            </p>
+            <p style={{ marginTop: '10px', lineHeight: '1.8', color: '#00c49a' }}>
+              Card grading is not only a safeguard for collections but also a foundation of trust
+              in market transactions. Each card undergoes strict inspection, including surface condition,
+              print quality, and corner wear, ultimately presented as a standardized score.
+              This grading system allows collectors to clearly understand the true value of their cards
+              and gain greater recognition in the market.
+            </p>
+          </div>
+        </div>
+
+        <div className="info-item" style={{ marginBottom: '15px' }}>
+          <div className="info-label">評級服務</div>
+          <div className="info-value">
+            <ul style={{ lineHeight: '1.8', paddingLeft: '20px', color: '#333' }}>
+              <li>🎯 嚴格的檢測流程</li>
+              <li>📊 標準化的評級系統</li>
+              <li>🔒 真實性認證保障</li>
+              <li>💎 專業市場價值評估</li>
             </ul>
           </div>
         </div>
 
-        <div className="extra-info-title">
-          使用說明
+        <div className="info-item" style={{ marginBottom: '15px' }}>
+          <div className="info-label">服務優勢</div>
+          <div className="info-value">
+            <ul style={{ lineHeight: '1.8', paddingLeft: '20px', color: '#333' }}>
+              <li>✅ 認可度高，提升交易信心</li>
+              <li>✅ 評級準確，保障收藏價值</li>
+              <li>✅ 專業團隊，豐富經驗</li>
+              <li>✅ 快速服務，即時查詢</li>
+            </ul>
+          </div>
         </div>
 
         <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">如何使用：</div>
+          <div className="info-label">評級流程</div>
           <div className="info-value">
-            <ol style={{ lineHeight: '1.8', paddingLeft: '20px' }}>
-              <li>在主頁輸入寶可夢卡牌的獨立編號</li>
-              <li>點擊「搜索」按鈕進行查詢</li>
-              <li>查看查詢結果中的卡牌詳細資料</li>
+            <ol style={{ lineHeight: '1.8', paddingLeft: '20px', color: '#333' }}>
+              <li><strong>初步檢查：</strong>卡面狀態、印刷清晰度</li>
+              <li><strong>詳細評估：</strong>邊角磨損、表面痕跡</li>
+              <li><strong>專業打分：</strong>依據標準給予評級分數</li>
+              <li><strong>品質認證：</strong>專家核驗並發放證書</li>
             </ol>
-          </div>
-        </div>
-
-        <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">卡牌編號格式：</div>
-          <div className="info-value">
-            請使用官方的寶可夢卡牌編號，例如：<br />
-            <code style={{ background: '#f8f9fa', padding: '4px 8px', borderRadius: '4px' }}>
-              001/001, 002/002, 003/003...
-            </code>
-          </div>
-        </div>
-
-        <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">注意事項：</div>
-          <div className="info-value">
-            <ul style={{ lineHeight: '1.8', paddingLeft: '20px' }}>
-              <li>請確保輸入正確的卡牌編號</li>
-              <li>本系統僅提供查詢功能，不涉及任何交易</li>
-              <li>資料庫定期更新，請關注最新消息</li>
-            </ul>
           </div>
         </div>
       </div>
