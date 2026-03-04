@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Hero from './Hero';
 import Features from './Features';
+import Plugins from './Plugins';
 import axios from 'axios';
 
 // 整合 Docker 使用相對路徑，獨立部署使用完整 URL
@@ -37,9 +38,8 @@ function Home() {
   return (
     <div className="container">
       <Hero />
-
       <Features />
-
+      <Plugins />
       <div className="search-section" id="search-section">
         <div className="search-box">
           <form onSubmit={handleSearch}>

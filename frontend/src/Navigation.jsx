@@ -5,11 +5,9 @@ function Navigation() {
   const location = useLocation();
 
   const navItems = [
-    { name: 'Hero 區', nameEn: 'Hero', path: '/#hero-section' },
-    { name: '功能介紹', nameEn: 'Features', path: '/#features-section' },
-    { name: '搜索區', nameEn: 'Search', path: '/#search-section' },
-    { name: '簡介頁', nameEn: 'Intro', path: '/intro' },
-    { name: '插件頁', nameEn: 'Plugins', path: '/plugins' },
+    { name: '主頁', nameEn: 'Home', path: '/#home' },
+    { name: '功能介紹', nameEn: 'Features', path: '/#intro' },
+    { name: '搜卡', nameEn: 'Search', path: '/#search' },
   ];
 
   return (
