@@ -11,7 +11,7 @@ function Hero() {
             className="hero-pokemon"
           />
           <div className="hero-badge">
-            <span className="badge-text">專業評級</span>
+            <span className="badge-text">專業查分</span>
           </div>
         </div>
         <div className="hero-text">

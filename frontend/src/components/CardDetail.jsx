@@ -56,7 +56,7 @@ function CardDetail({ card }) {
           </div>
         </div>
 
-        <h3 style={{ margin: '30px 0 20px', color: '#3b4cca', fontWeight: 'bold' }}>
+        <h3 style={{ margin: '30px 0 20px', color: '#00c49a', fontWeight: 'bold' }}>
           分數分佈 (Score Distribution)
         </h3>
 
@@ -85,21 +85,21 @@ function CardDetail({ card }) {
 
         {card.statistics && (
           <>
-            <h3 style={{ margin: '30px 0 20px', color: '#3b4cca', fontWeight: 'bold' }}>
+            <h3 style={{ margin: '30px 0 20px', color: '#00c49a', fontWeight: 'bold' }}>
               同類型卡牌統計 (Same Type Card Statistics)
             </h3>
             <div className="statistics-grid">
               <div className="stat-box">
-                <div className="stat-value">{card.statistics.total_same_type}</div>
-                <div className="stat-label">總數量 (Total)</div>
+                <div className="stat-value" style={{color: '#fff'}}>{card.statistics.total_same_type}</div>
+                <div className="stat-label" style={{color: '#fff'}}>總數量 (Total)</div>
               </div>
               <div className="stat-box">
-                <div className="stat-value">{card.statistics.higher_score_count}</div>
-                <div className="stat-label">更高分數 (Higher Score)</div>
+                <div className="stat-value" style={{color: '#fff'}} >{card.statistics.higher_score_count}</div>
+                <div className="stat-label" style={{color: '#fff'}}>更高分數 (Higher Score)</div>
               </div>
               <div className="stat-box">
-                <div className="stat-value">{card.statistics.same_score_count}</div>
-                <div className="stat-label">相同分數 (Same Score)</div>
+                <div className="stat-value" style={{color: '#fff'}}>{card.statistics.same_score_count}</div>
+                <div className="stat-label" style={{color: '#fff'}}>相同分數 (Same Score)</div>
               </div>
             </div>
           </>
@@ -107,7 +107,9 @@ function CardDetail({ card }) {
 
         {(card.image_url1 || card.image_url2 || card.image_url3) && (
           <>
-            <h3 className="extra-info-title">額外資料(Additional INformation)</h3>
+            <h3 className="extra-info-title" style={{ margin: '30px 0 20px', color: '#00c49a', fontWeight: 'bold' }} >
+              額外資料(Additional Information)
+            </h3>
             <div className="card-images">
               {card.image_url1 && (
                 <img

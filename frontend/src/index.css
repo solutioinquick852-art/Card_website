@@ -141,12 +141,12 @@ code {
 .card-detail-header {
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #3b4cca;
+  border-bottom: 3px solid #00c49a;
 }
 
 .card-detail-header h2 {
   font-size: 2rem;
-  color: #3b4cca;
+  color: #333;
   font-weight: bold;
 }
 
@@ -161,7 +161,7 @@ code {
   background: #f8f9fa;
   padding: 15px;
   border-radius: 12px;
-  border-left: 4px solid #3b4cca;
+  border-left: 4px solid #00c49a;
 }
 
 .info-label {
@@ -218,11 +218,11 @@ code {
   background: #f8f9fa;
   border-radius: 12px;
   padding: 20px;
-  border-left: 4px solid #3b4cca;
+  border-left: 4px solid #00c49a;
 }
 
 .distribution-group-title {
-  color: #3b4cca;
+  color: #00c49a;
   font-weight: bold;
   margin: 0 0 15px 0;
   font-size: 1.1rem;
@@ -304,12 +304,12 @@ code {
 }
 
 .stat-box {
-  background: linear-gradient(135deg, #3b4cca 0%, #2a3b8a 100%);
+  background: linear-gradient(135deg, #28a745 0%, #00c49a 100%);
   color: white;
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(59, 76, 202, 0.3);
+  box-shadow: 0 4px 12px rgba(59, 202, 90, 0.3);
 }
 
 .stat-value {
