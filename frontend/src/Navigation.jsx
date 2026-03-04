@@ -21,7 +21,7 @@ function Navigation() {
             <Link
               key={item.path}
               to={item.path}
-              className={`navbar-item ${location.pathname === item.path || (item.path.startsWith('/#') && location.pathname === '/') ? 'active' : ''}`}
+              className={`navbar-item ${location.hash === item.path ? 'active' : ''}`}
             >
               <span className="nav-text-zh">{item.name}</span>
               <span className="nav-text-en">{item.nameEn}</span>

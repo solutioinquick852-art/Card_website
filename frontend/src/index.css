@@ -78,7 +78,7 @@ code {
   flex: 1;
   padding: 15px;
   font-size: 1.1rem;
-  border: 3px solid #ffcb05;
+  border: 3px solid #28a745;
   border-radius: 12px;
   transition: all 0.3s;
 }
@@ -335,7 +335,7 @@ code {
 .login-form h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #3b4cca;
+  color: #00c49a;
   font-weight: bold;
 }
 
@@ -360,13 +360,13 @@ code {
 
 .form-input:focus {
   outline: none;
-  border-color: #3b4cca;
+  border-color: #00c49a;
 }
 
 .btn {
   width: 100%;
   padding: 12px;
-  background: linear-gradient(135deg, #3b4cca 0%, #2a3b8a 100%);
+  background: linear-gradient(135deg, #28a745 0%, #00c49a 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -404,7 +404,7 @@ code {
   align-items: center;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 3px solid #ffcb05;
+  border-bottom: 3px solid #00c49a;
   flex-wrap: wrap;
   gap: 15px;
 }
@@ -469,12 +469,12 @@ code {
 }
 
 .btn-edit {
-  background: #ffc107;
+  background: #00c49a;
   color: #333;
 }
 
 .btn-edit:hover {
-  background: #e0a800;
+  background: #28a745;
 }
 
 .modal {
@@ -523,7 +523,7 @@ code {
 }
 
 .modal-header h2 {
-  color: #3b4cca;
+  color: #00c49a;
   margin: 0;
   font-weight: bold;
   font-size: 1.3rem;
