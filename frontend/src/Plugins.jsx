@@ -5,64 +5,76 @@ function Plugins() {
     <div className="container">
       <div className="header">
         <h1>
-          插件
+          搜卡功能
           <span style={{ display: 'block', fontSize: '0.5em', fontWeight: 'normal', marginTop: '10px' }}>
-            Plugins
+            Card Search Features
           </span>
         </h1>
-        <p>
-          擴展功能與插件管理
-          <br />
-          <span style={{ fontSize: '0.9em', opacity: 0.8 }}>
-            Extensions and Plugin Management
-          </span>
-        </p>
       </div>
 
       <div className="card-detail">
-        <div className="card-detail-header">
-          <h2>可用插件</h2>
+        <div className="info-item" style={{ marginBottom: '20px' }}>
+          <div className="info-value">
+            <h3>快速查詢</h3>
+            <p style={{ marginTop: '10px', lineHeight: '1.8', color: '#28a745' }}>
+              輸入卡牌名稱或編號，即可快速查詢卡牌的評級與市場價值。
+              無論是經典系列還是最新版本，都能在這裡找到專業的數據支持，讓收藏更安心。
+            </p>
+            <p style={{ marginTop: '10px', lineHeight: '1.8', color: '#00c49a' }}>
+              Enter a card name or number to quickly search for grading and market value.
+              Whether it's a classic series or the latest release, you can find professional data support here,
+              making your collection more secure.
+            </p>
+          </div>
         </div>
 
-        <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">系統插件</div>
+        <div className="info-item" style={{ marginBottom: '20px' }}>
+          <div className="info-label">功能特點</div>
           <div className="info-value">
-            <p>本系統支援以下擴展功能：</p>
-            <ul style={{ lineHeight: '1.8', paddingLeft: '20px' }}>
-              <li>🎨 主題自定義 - 個性化介面風格</li>
-              <li>📱 響應式設計 - 支援各種裝置尺寸</li>
-              <li>⚡ 快速搜索 - 即時查詢卡牌資料</li>
-              <li>🔐 安全認證 - 管理員登入系統</li>
+            <ul style={{ lineHeight: '1.8', paddingLeft: '20px', color: '#333' }}>
+              <li>🔍 <strong>智能搜索：</strong>支援模糊查詢，快速定位卡牌</li>
+              <li>📊 <strong>詳細評級：</strong>展示專業評級分數與評價</li>
+              <li>💰 <strong>市場價值：</strong>提供當前市場參考價格</li>
+              <li>🖼️ <strong>高質圖片：</strong>清晰的卡牌圖片展示</li>
             </ul>
           </div>
         </div>
 
         <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">開發中插件</div>
+          <div className="info-label">使用說明</div>
           <div className="info-value">
-            <p>我們正在開發以下新功能：</p>
-            <ul style={{ lineHeight: '1.8', paddingLeft: '20px' }}>
-              <li>🌐 多語言支持 - 即將支援英文和日文</li>
-              <li>📦 卡牌收藏 - 個人收藏功能</li>
-              <li>📊 高級分析 - 更深入的數據分析工具</li>
-              <li>🔔 提醒通知 - 新卡牌上架通知</li>
+            <ol style={{ lineHeight: '1.8', paddingLeft: '20px', color: '#333' }}>
+              <li>在搜尋框中輸入卡牌編號或名稱</li>
+              <li>點擊「搜索」按鈕進行查詢</li>
+              <li>查看詳細的評級資訊與市場價值</li>
+              <li>如需進一步了解，歡迎聯繫我們</li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="info-item" style={{ marginBottom: '15px' }}>
+          <div className="info-label">支持的系列</div>
+          <div className="info-value">
+            <p>我們支持以下系列的卡牌查詢：</p>
+            <ul style={{ marginTop: '10px', paddingLeft: '20px', color: '#333' }}>
+              <li>🌟 <strong>經典系列：</strong>初代至三代</li>
+              <li>🔥 <strong>現代系列：</strong>四代至九代</li>
+              <li>✨ <strong>特殊系列：</strong>特別活動、限定版本</li>
+              <li>🎴 <strong>收藏品：</strong>稀有卡牌、紀念版</li>
             </ul>
           </div>
         </div>
 
         <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">插件開發</div>
+          <div className="info-label">專業保障</div>
           <div className="info-value">
-            <p>有興趣開發插件？歡迎貢獻！</p>
-            <p>請聯繫我們了解更多開發資訊。</p>
-          </div>
-        </div>
-
-        <div className="info-item" style={{ marginBottom: '15px' }}>
-          <div className="info-label">版本資訊</div>
-          <div className="info-value">
-            <p>當前版本：v1.0.0</p>
-            <p>最後更新：2026年3月</p>
+            <p>所有評級數據均由專業團隊提供：</p>
+            <ul style={{ marginTop: '10px', paddingLeft: '20px', color: '#333' }}>
+              <li>🏆 經驗證的評級標準</li>
+              <li>📋 詳細的評級報告</li>
+              <li>🔐 安全的數據保護</li>
+              <li>🤝 及時的客戶支持</li>
+            </ul>
           </div>
         </div>
       </div>
