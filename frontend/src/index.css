@@ -86,7 +86,7 @@ code {
 .search-input:focus {
   outline: none;
   border-color: #00c49a;
-  box-shadow: 0 0 0 4px rgba(255, 149, 0, 0.2);
+  box-shadow: 0 -2px 10px rgba(60, 252, 105, 0.3);
 }
 
 .search-button {
@@ -100,12 +100,12 @@ code {
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+box-shadow: 0 -2px 10px rgba(60, 252, 105, 0.3);
 }
 
 .search-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(255, 149, 0, 0.5);
+  box-shadow: 0 -2px 10px rgba(60, 252, 105, 0.3);
 }
 
 .card-detail {
@@ -606,6 +606,14 @@ code {
   gap: 60px;
 }
 
+.contactus-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
 .hero-image {
   position: relative;
   flex-shrink: 0;
@@ -699,8 +707,20 @@ code {
   color: #00c49a;
 }
 
+.footer-links a {
+  color: white;          /* 白色字 */
+  text-decoration: none; /* 移除底線 */
+  font-weight: 500;      /* 可選：字體稍微加粗 */
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #7cffe3;        /* 滑鼠移上去時變成亮黃色，方便辨識 */
+}
+
+
 /* 手機響應式 Hero */
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .hero {
     padding: 40px 20px;
     margin-bottom: 30px;
@@ -719,6 +739,10 @@ code {
 
   .hero-content {
     flex-direction: column;
+    gap: 40px;
+  }
+
+  .contactus-content {
     gap: 40px;
   }
 
@@ -767,6 +791,46 @@ code {
     grid-template-columns: repeat(2,1fr);
     gap: 15px;
   }
+
+  .navbar-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0s ease-out;
+    flex-direction: column;
+    width: 100%;
+    background: #28a745;
+    border-radius: 8px;
+    padding: 0 10px;
+  }
+
+  .navbar-menu.open {
+    max-height: 500px; /* 足夠容納所有項目 */
+    padding: 10px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: white;
+    background: none;
+    border: none;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 831px) {
+  .hamburger {
+    display: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 10px;
+    max-height: none; /* 桌面版不需要動畫 */
+    padding: 0;
+  }
 }
 
 @media (max-width: 480px) {
@@ -791,7 +855,7 @@ code {
 }
 
 /* 手機響應式設計 */
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .header h1 {
     font-size: 2rem;
   }
@@ -986,7 +1050,7 @@ code {
 }
 
 /* 手機響應式導航 */
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .navbar-container {
     flex-direction: column;
     height: auto;
@@ -1054,7 +1118,7 @@ code {
   font-weight: normal;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 830px) {
   .footer {
     padding: 20px 15px;
   }

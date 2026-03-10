@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import Footer from './Footer';
-import Hero from './Hero';
+
 import Home from './Home';
-import Intro from './Intro';
-import Plugins from './Plugins';
+import Card_holder from './Card_holder';
+import Grading_standard from './Grading_standard';
+import Service_fee from './Service_fee';
+import Term_of_use from './Term_of_use';
+import Contact_us from './Contact_us';
+
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 
@@ -53,7 +57,13 @@ function App() {
                 )
               }
             />
+            <Route path="/grading_standard" element={<Grading_standard />} />
+            <Route path="/card_holder" element={<Card_holder />} />
+            <Route path="/service_fee" element={<Service_fee />} />
+            <Route path="/term_of_use" element={<Term_of_use />} />
+            <Route path="/contact_us" element={<Contact_us />} />
           </Routes>
+
         </main>
         <Footer />
       </div>
