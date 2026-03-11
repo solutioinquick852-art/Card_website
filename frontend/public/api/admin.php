@@ -131,7 +131,7 @@ elseif ($action === 'reset-password') {
         $mail->addAddress('solutioinquick852@gmail.com', $username);
 
         $mail->isHTML(true);
-        $mail->Subject = "密碼重置驗證碼";
+        $mail->Subject = "Password Reset Verification Code";
         $mail->Body    = "
             <h3>密碼重置驗證碼</h3>
             <p>您的驗證碼是：<b>$code</b></p>
