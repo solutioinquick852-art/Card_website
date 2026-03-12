@@ -122,13 +122,13 @@ elseif ($action === 'reset-password') {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'solutioinquick852@gmail.com'; 
-        $mail->Password   = 'zqanyubkydtnagcr';            
+        $mail->Username   = 'peterpanntinkerbellz@gmail.com'; 
+        $mail->Password   = '呢度改密碼';            
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
-        $mail->setFrom('solutioinquick852@gmail.com', 'Password Reset');
-        $mail->addAddress('solutioinquick852@gmail.com', $username);
+        $mail->setFrom('peterpanntinkerbellz@gmail.com', 'Password Reset');
+        $mail->addAddress('peterpanntinkerbellz@gmail.com', $username);
 
         $mail->isHTML(true);
         $mail->Subject = "Password Reset Verification Code";

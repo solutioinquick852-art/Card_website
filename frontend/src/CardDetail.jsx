@@ -50,7 +50,21 @@ function CardDetail({ card }) {
           </div>
           <div className="info-item">
             <div className="info-label">分數 (Score)</div>
-            <div className="info-value">{card.card_score || '-'}</div>
+            <div className="info-value">
+              {parseFloat(card.card_score) > 10 
+                ? 10 
+                : parseFloat(card.card_score).toFixed(1) || '-'}
+              {card.card_score > 10 && (
+                <span>
+                  {"⭐".repeat(
+                    Math.max(
+                      0,
+                      Math.min(Math.round((card.card_score - 10) * 10), 3)
+                    )
+                  )}
+                </span>
+              )}
+            </div>
           </div>
         </div>
 
@@ -65,7 +79,20 @@ function CardDetail({ card }) {
                 {sortedDistribution.map((score, index) => (
                   <div key={index} className="distribution-item">
                     <div className="distribution-score">
-                      {parseFloat(score.card_score).toFixed(1)}
+                      {parseFloat(score.card_score) > 10 ? 10 : parseFloat(score.card_score).toFixed(1)}
+                      {score.card_score > 10 && (
+                        <br />
+                      )}
+                      {score.card_score > 10 && (
+                        <span>
+                          {"⭐".repeat(
+                            Math.max(
+                              0,
+                              Math.min(Math.round((score.card_score - 10) * 10), 3)
+                            )
+                          )}
+                        </span>
+                      )}
                     </div>
                     <div className="distribution-count">
                       ({score.count})

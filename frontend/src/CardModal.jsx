@@ -67,6 +67,7 @@ function CardModal({ card, onSave, onCancel }) {
       if (response.data.success) {
         alert(response.data.message);
         onSave(response.data); // 通知父元件更新
+        window.location.reload();
       } else {
         alert('操作失敗');
       }
@@ -152,7 +153,7 @@ function CardModal({ card, onSave, onCancel }) {
               value={formData.card_score}
               onChange={handleChange}
               min="1"
-              max="10"
+              max="10.3"
               step="0.1"
               required
             />

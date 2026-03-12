@@ -50,6 +50,7 @@ function AdminDashboard({  }) {
     try {
       await axios.delete(`/api/cards.php?id=${id}`);
       setCards(cards.filter(card => card.id !== id));
+      window.location.reload();
     } catch (error) {
       setError(error.response?.data?.error || '刪除卡牌失敗');
     }

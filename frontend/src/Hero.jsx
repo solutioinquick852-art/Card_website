@@ -2,7 +2,7 @@ import React from 'react';
 
 function Hero() {
   return (
-    <div className="hero" id="home">
+    <div className="hero" >
       <div className="hero-content">
         <div className="hero-image">
           <img

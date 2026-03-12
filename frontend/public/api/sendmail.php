@@ -25,13 +25,13 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'solutioinquick852@gmail.com';
-    $mail->Password   = 'zqanyubkydtnagcr';
+    $mail->Username   = 'peterpanntinkerbellz@gmail.com';
+    $mail->Password   = '呢度改密碼';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
-    $mail->setFrom('solutioinquick852@gmail.com', 'Contact Form');
-    $mail->addAddress('solutioinquick852@gmail.com', 'Admin');
+    $mail->setFrom('peterpanntinkerbellz@gmail.com', 'Contact Form');
+    $mail->addAddress('peterpanntinkerbellz@gmail.com', 'Admin');
 
     $mail->isHTML(true);
     $mail->Subject = "New Request from Contact Form";
